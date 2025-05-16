@@ -15,7 +15,7 @@ Flowise - [Env Variables](https://github.com/FlowiseAI/Flowise/blob/main/CONTRIB
 
 ### Docker Compose
 
-#### Starte
+#### Start
 
 *It takes time...!* ➡️ `embedding ... / 24.4GB Pulling`
 
