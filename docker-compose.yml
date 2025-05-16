@@ -1,0 +1,45 @@
+services:
+  flowise:
+    image: flowiseai/flowise
+    container_name: flowise
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./flowise_data:/root/.flowise
+    environment:
+      - PORT=3000
+      - DATABASE_PATH=/root/.flowise/flowise.db
+    restart: unless-stopped
+    # depends_on:
+    #   - ollama
+
+  # qdrant:
+  #   image: qdrant/qdrant
+  #   container_name: qdrant
+  #   ports:
+  #     - '6333:6333'
+  #     - '6334:6334'
+  #   volumes:
+  #     - ./qdrant_storage:/qdrant/storage
+  #   restart: unless-stopped
+
+  # ollama:
+  #   image: ollama/ollama
+  #   container_name: ollama
+  #   ports:
+  #     - '11434:11434'
+  #   volumes:
+  #     - ollama_data:/root/.ollama
+  #   restart: unless-stopped
+  #   # Für GPU-Unterstützung:
+  #   # deploy:
+  #   #   resources:
+  #   #     reservations:
+  #   #       devices:
+  #   #         - capabilities: [gpu]
+  #   #       # Requires NVIDIA Container Toolkit
+
+# volumes:
+#   ollama_data:
+#   qdrant_storage:
+#   flowise_data:
