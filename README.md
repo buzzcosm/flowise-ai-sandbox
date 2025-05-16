@@ -18,7 +18,7 @@ Flowise - [Env Variables](https://github.com/FlowiseAI/Flowise/blob/main/CONTRIB
 *It takes time...!*
 
 > .........Patience, you must have, my young Padawan.  
-> <img src="docs/img/yoda.png" style="transform: scaleX(-1);" alt="yoda">
+> ![yoda](docs/img/yoda.png)
 > *May the 4th be with you.*
 
 ```bash
@@ -29,6 +29,6 @@ Flowise - [Env Variables](https://github.com/FlowiseAI/Flowise/blob/main/CONTRIB
 
 ```bash
 docker-compose down
-// or
-docker-compose down --remove-orphans -v
 ```
+
+Optionally, you can also run `docker-compose down --remove-orphans -v` to remove all containers and volumes (including data).
