@@ -4,8 +4,18 @@ Flowise - [Env Variables](https://github.com/FlowiseAI/Flowise/blob/main/CONTRIB
 
 ## Docker Compose
 
+**Start**
+
 ```bash
 docker-compose up -d
 ```
 
-Open [http://localhost:3000⁠](http://localhost:3000⁠)
+**Open** 
+
+[Flowise⁠](http://localhost:3000⁠) App
+
+**Stop**
+
+```bash
+docker-compose down --remove-orphans -v
+```
