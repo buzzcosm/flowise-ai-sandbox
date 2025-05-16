@@ -5,8 +5,33 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - ./flowise_data:/root/.flowise
+      - ./volumes/flowise_data:/root/.flowise
     environment:
       - PORT=3000
       - DATABASE_PATH=/root/.flowise/flowise.db
+    restart: unless-stopped
+    depends_on:
+      - ollama
+      - qdrant
+
+  ollama:
+    build:
+      context: ./ollama
+    container_name: ollama
+    ports:
+      - '11434:11434'
+    volumes:
+      - ./volumes/ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant
+    container_name: qdrant
+    ports:
+      - '6333:6333'
+      - '6334:6334'
+    volumes:
+      - ./volumes/qdrant_storage:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__API_KEY: "mysecretapikey"
     restart: unless-stopped

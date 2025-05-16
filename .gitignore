@@ -1,7 +1,9 @@
 ### Local Flowise AI development environment ###
 
 # Artifacts
-flowise_data
+volumes/flowise_data
+volumes/ollama_data
+volumes/qdrant_storage
 .env
 
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,jetbrains+all
