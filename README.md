@@ -17,11 +17,11 @@ Flowise - [Env Variables](https://github.com/FlowiseAI/Flowise/blob/main/CONTRIB
 
 #### Starte
 
-*It takes time...!*
+*It takes time...!* ➡️ `embedding ... / 24.4GB Pulling`
 
 > .........Patience, you must have, my young Padawan.  
 > ![yoda](docs/img/yoda.png)
-> *May the 4th be with you.*
+> *[May the 4th be with you.](https://www.google.com/search?q=May+the+4th+be+with+you.&sca_esv=335550648f386498&source=hp&ei=3b0naM6tMqGbi-gPzP3d6Ag&iflsig=ACkRmUkAAAAAaCfL7bNX2amEMXheqN4a1Eb_8IZxZ0I-&ved=0ahUKEwiOkIjHhqmNAxWhzQIHHcx-F40Q4dUDCBk&uact=5&oq=May+the+4th+be+with+you.&gs_lp=Egdnd3Mtd2l6IhhNYXkgdGhlIDR0aCBiZSB3aXRoIHlvdS5I6wNQAFgAcAB4AJABAJgBAKABAKoBALgBA8gBAPgBAvgBAZgCAKACAJgDAJIHAKAHALIHALgHAA&sclient=gws-wiz)*
 
 ```bash
 ./start.sh
