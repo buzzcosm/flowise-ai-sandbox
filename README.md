@@ -1,51 +1,34 @@
 # Local Flowise AI development environment
 
+More infos to project [hire](docs/project.md).
+
+### Tutorials
+
+- [YouTube: Install FlowiseAI with Docker Compose - Explore This Powerful No-Code LLM Tool](https://www.youtube.com/watch?v=ZJvl1_DVy_g)
+- [YouTube: FlowiseAI Masterclass: Build AI Agents (Beginner to Pro)](https://www.youtube.com/watch?v=9TaRksXuLWY)
+
+### Flowise Infos
+
 Flowise - [Env Variables](https://github.com/FlowiseAI/Flowise/blob/main/CONTRIBUTING.md#-env-variables⁠)
 
-## Docker Compose
+### Docker Compose
 
-**Start Flowise**
+#### Starte
+
+*It takes time...!*
+
+> .........Patience, you must have, my young Padawan.  
+> <img src="docs/img/yoda.png" style="transform: scaleX(-1);" alt="yoda">
+> *May the 4th be with you.*
 
 ```bash
-docker-compose build ollama
-docker-compose up -d
+./start.sh
 ```
 
-**Start Model in Ollama**
-
-```bash
-docker exec -it ollama ollama run mistral
-```
-
-**Open Flowise** 
-
-[Flowise⁠](http://localhost:3000⁠) App
-
-**Stop**
+#### Stop
 
 ```bash
 docker-compose down
 // or
 docker-compose down --remove-orphans -v
 ```
-
-## 🔐 Qdrant with API-Key
-
-🔹 In Flowise:
-- URL: http://qdrant:6333
-- API Key: mysecretapikey
-
-### 🧪 Test
-
-Host or Container
-
-```bash
-curl -H "api-key: mysecretapikey" http://localhost:6333/collections
-```
-
-In Flowise-Containers
-
-```bash
-docker exec -it flowise curl -H "api-key: mysecretapikey" http://qdrant:6333/collections
-```
-

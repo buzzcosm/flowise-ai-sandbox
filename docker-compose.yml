@@ -1,4 +1,10 @@
 services:
+
+  # ##################################################################
+  # Flowise: LLMs and Chatbots
+  # Flowise is a low-code platform for building LLMs and chatbots.
+  # https://github.com/FlowiseAI/Flowise
+  # ##################################################################
   flowise:
     image: flowiseai/flowise
     container_name: flowise
@@ -13,17 +19,14 @@ services:
     depends_on:
       - ollama
       - qdrant
+      - embedding
 
-  ollama:
-    build:
-      context: ./ollama
-    container_name: ollama
-    ports:
-      - '11434:11434'
-    volumes:
-      - ./volumes/ollama_data:/root/.ollama
-    restart: unless-stopped
-
+  # ##################################################################
+  # Qdrant: Vector Database
+  # Qdrant is a high-performance vector search engine
+  # that is designed to handle large-scale vector data.
+  # https://qdrant.tech/
+  # ##################################################################
   qdrant:
     image: qdrant/qdrant
     container_name: qdrant
@@ -35,3 +38,40 @@ services:
     environment:
       QDRANT__SERVICE__API_KEY: "mysecretapikey"
     restart: unless-stopped
+
+  # ##################################################################
+  # Ollama: Local LLMs
+  # Ollama is a platform for running large language models (LLMs).
+  # https://github.com/ollama/ollama
+  # ##################################################################
+  ollama:
+    build:
+      context: ./ollama
+    container_name: ollama
+    ports:
+      - '11434:11434'
+    volumes:
+      - ./volumes/ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  # ##################################################################
+  # LocalAI: Local LLMs
+  # LocalAI is a local LLM server that can run various models.
+  # https://localai.io/
+  # https://hub.docker.com/r/localai/localai
+  # ##################################################################
+  embedding:
+    image: localai/localai:latest
+    platform: linux/amd64
+    container_name: embedding
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./volumes/models:/models
+    environment:
+      - DEBUG=true
+      - MODELS_PATH=/models
+      - LOCALAI_MODEL=all-MiniLM-L6-v2
+      - BACKEND=sentence-transformers
+    restart: unless-stopped
+

@@ -1,14 +1,14 @@
 #!/bin/sh
 
-# Warte, bis der Ollama-Dienst bereit ist
+# Wait until the Ollama service is ready
 until curl -s http://localhost:11434/tags > /dev/null; do
   echo "Warte auf Ollama..."
   sleep 2
 done
 
-# Modell automatisch laden (z. B. mistral)
+# Load model(s) automatically (e.g. mistral)
 ollama run mistral
 ollama run llama3
 
-# Starte den Server im Vordergrund
+# Start the server in the foreground
 exec ollama serve
