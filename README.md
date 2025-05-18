@@ -1,7 +1,5 @@
 # Local Flowise AI development environment
 
-More infos to project [hire](docs/project.md).
-
 ### Tutorials
 
 - [YouTube: FlowiseAI Masterclass: Build AI Agents (Beginner to Pro)](https://www.youtube.com/watch?v=9TaRksXuLWY)
