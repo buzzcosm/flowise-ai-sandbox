@@ -10,3 +10,21 @@ services:
       - PORT=3000
       - DATABASE_PATH=/root/.flowise/flowise.db
     restart: unless-stopped
+    depends_on:
+      - qdrant
+
+  # ##################################################################
+  # Qdrant: Vector Database
+  # Visualize: http://localhost:6333/dashboard
+  # ##################################################################
+  qdrant:
+    image: qdrant/qdrant
+    container_name: qdrant
+    ports:
+      - '6333:6333'
+      - '6334:6334'
+    volumes:
+      - ./volumes/qdrant_storage:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__API_KEY: "mysecretapikey"
+    restart: unless-stopped

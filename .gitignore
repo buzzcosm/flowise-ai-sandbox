@@ -2,6 +2,7 @@
 
 # Artifacts
 **/volumes/
+**/flows
 **/.env
 
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,jetbrains+all
