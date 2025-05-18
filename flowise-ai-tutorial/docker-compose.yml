@@ -1,0 +1,12 @@
+services:
+  flowise:
+    image: flowiseai/flowise
+    container_name: flowise
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./volumes/flowise_data:/root/.flowise
+    environment:
+      - PORT=3000
+      - DATABASE_PATH=/root/.flowise/flowise.db
+    restart: unless-stopped

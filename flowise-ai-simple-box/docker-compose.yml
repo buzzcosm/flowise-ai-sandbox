@@ -1,0 +1,40 @@
+services:
+  # ##################################################################
+  # Flowise: LLMs and Chatbots
+  # Flowise is a low-code platform for building LLMs and chatbots.
+  # https://github.com/FlowiseAI/Flowise
+  # ##################################################################
+  flowise:
+    image: flowiseai/flowise
+    container_name: flowise
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./volumes/flowise_data:/root/.flowise
+    environment:
+      - PORT=3000
+      - DATABASE_PATH=/root/.flowise/flowise.db
+    restart: unless-stopped
+    # depends_on:
+    #   - weaviate
+
+  # # ##################################################################
+  # # Weaviate: Vector Search Engine
+  # # Weaviate is an open-source vector search engine.
+  # # https://weaviate.io/
+  # # ##################################################################    
+  # weaviate:
+  #   image: semitechnologies/weaviate:latest
+  #   container_name: weaviate
+  #   ports:
+  #     - "8081:8080"
+  #   environment:
+  #     AUTHENTICATION_APIKEY_ENABLED: 'true'
+  #     AUTHENTICATION_APIKEY_ALLOWED_KEYS: 'my-secret-key'
+  #     AUTHENTICATION_APIKEY_USERS: 'admin'
+  #     QUERY_DEFAULTS_LIMIT: 25
+  #     DEFAULT_VECTORIZER_MODULE: 'none'
+  #     PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+  #   volumes:
+  #     - ./volumes/weaviate_data:/var/lib/weaviate
+  #   restart: unless-stopped
