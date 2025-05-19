@@ -1,3 +1,4 @@
+name: flowise-ai-tutorial
 services:
   flowise:
     image: flowiseai/flowise
@@ -12,6 +13,7 @@ services:
     restart: unless-stopped
     depends_on:
       - qdrant
+      # - localai
 
   # ##################################################################
   # Qdrant: Vector Database
@@ -28,3 +30,18 @@ services:
     environment:
       QDRANT__SERVICE__API_KEY: "mysecretapikey"
     restart: unless-stopped
+
+  # localai:
+  #   container_name: local-ai
+  #   hostname: local-ai
+  #   image: docker.io/localai/localai:v2.10.1
+  #   platform: linux/amd64
+  #   ports:
+  #     - 8080:8080
+  #   environment:
+  #     - MODELS_PATH=/models
+  #     - API_KEY='somevaluehere'
+  #   volumes:
+  #     - ./volumes/localai/models:/models
+  #   command:
+  #     - phi-2

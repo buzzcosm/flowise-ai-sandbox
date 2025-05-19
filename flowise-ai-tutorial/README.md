@@ -1,6 +1,7 @@
 # FlowiseAI Learning with Tutorial
 
 - [YouTube: FlowiseAI Masterclass: Build AI Agents (Beginner to Pro)](https://www.youtube.com/watch?v=9TaRksXuLWY)
+- [Flowise AI Tutorial #9 - Using Local Models, LocalAI, GPT4ALL](https://www.youtube.com/watch?v=0B0oIs8NS9k)
 
 ## Tools
 
